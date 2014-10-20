@@ -1,10 +1,21 @@
 <?php
 
 group('db',function(){
+    task('truncate',function(){
+        include 'config.php';
+        $db = new PDO('mysql:host='.DB_HOST.';dbname='.DB_NAME,DB_USER,DB_PASS);
+        $db->exec("TRUNCATE steps;");
+        var_dump($db->errorInfo());
+        $db->exec("TRUNCATE users;");
+        var_dump($db->errorInfo());
+    });
+
     task('drop',function(){
         include 'config.php';
         $db = new PDO('mysql:host='.DB_HOST.';dbname='.DB_NAME,DB_USER,DB_PASS);
-        $db->exec("TRUNCATE steps");
+        $db->exec("DROP TABLE steps;");
+        var_dump($db->errorInfo());
+        $db->exec("DROP TABLE users;");
         var_dump($db->errorInfo());
     });
 
@@ -30,8 +41,7 @@ group('test',function(){
   });
 
   task('unit',function(){
-      passthru('PHP_ENV=test vendor/bin/phake db:drop db:init db:load');
-      passthru('PHP_ENV=test vendor/bin/phpunit tests');
+      passthru('export PHP_ENV=test && phake db:drop db:init db:load && phpunit tests');
   });
 
   task('ui',function(){
