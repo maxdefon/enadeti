@@ -5,6 +5,8 @@
 </FilesMatch>
 
 RewriteEngine On
+RewriteCond %{DOCUMENT_ROOT}/src/public/$1 -f
+RewriteRule ^(.*)$ src/public/$1
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^(.*)$ src/index.php?q=/$1  [QSA]
 
