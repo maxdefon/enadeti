@@ -1,7 +1,6 @@
 <?php
 
 group('db',function(){
-
     task('drop',function(){
         include 'config.php';
         $db = new PDO('mysql:host='.DB_HOST.';dbname='.DB_NAME,DB_USER,DB_PASS);
@@ -29,7 +28,7 @@ task('test',function(){
     passthru('PHP_ENV=test vendor/bin/phpunit tests');
 });
 
-task('test-ci',function(){
+task('test-ui',function(){
     passthru('PHP_ENV=test vendor/bin/phake db:drop db:init db:load');
     passthru('PHP_ENV=test vendor/bin/behat features');
 });
