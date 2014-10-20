@@ -7,7 +7,7 @@ apt-get autoremove -y
 # add apache and php
 if [[ ! -e ~/.apache_done ]]; then
     # install apache and php
-    apt-get install apache2 libapache2-mod-php5 php5-pgsql php5 php5-cli php5-curl php5-common php5-gd php5-xdebug php5-sqlite php5-pgsql php5-mysql -y
+    apt-get install apache2 libapache2-mod-php5 php5-pgsql php5 php5-cli php5-curl php5-common php5-gd php5-xdebug php5-sqlite php5-pgsql php5-mysql git -y
     a2enmod rewrite
     service apache2 stop
     # use the project folder as main folder
@@ -43,6 +43,7 @@ fi
 if [[ ! -e ~/.app_done ]]; then
     su vagrant -lc "cd /vagrant && curl -sS https://getcomposer.org/installer | php"
     su vagrant -lc "cd /vagrant && php composer.phar update && php composer.phar install"
+    su vagrant -lc 'echo PATH=\"\$PATH:/vagrant/vendor/bin\" >> ~/.bashrc'
     touch ~/.app_done
 fi
 
