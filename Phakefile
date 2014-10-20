@@ -29,7 +29,7 @@ group('test',function(){
     passthru('export PHP_ENV=test && phake db:drop db:init db:load && phpunit tests && behat');
   });
 
-  task('test',function(){
+  task('unit',function(){
       passthru('PHP_ENV=test vendor/bin/phake db:drop db:init db:load');
       passthru('PHP_ENV=test vendor/bin/phpunit tests');
   });
