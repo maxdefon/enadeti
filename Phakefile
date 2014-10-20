@@ -23,13 +23,21 @@ group('db',function(){
     });
 });
 
-task('test',function(){
-    passthru('PHP_ENV=test vendor/bin/phake db:drop db:init db:load');
-    passthru('PHP_ENV=test vendor/bin/phpunit tests');
+group('test',function(){
+
+  task('all',function(){
+    passthru('export PHP_ENV=test && phake db:drop db:init db:load && phpunit tests && behat');
+  });
+
+  task('test',function(){
+      passthru('PHP_ENV=test vendor/bin/phake db:drop db:init db:load');
+      passthru('PHP_ENV=test vendor/bin/phpunit tests');
+  });
+
+  task('ui',function(){
+      passthru('PHP_ENV=test vendor/bin/phake db:drop db:init db:load');
+      passthru('PHP_ENV=test vendor/bin/behat features');
+  });
 });
 
-task('test-ui',function(){
-    passthru('PHP_ENV=test vendor/bin/phake db:drop db:init db:load');
-    passthru('PHP_ENV=test vendor/bin/behat features');
-});
 
