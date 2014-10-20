@@ -10,6 +10,11 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.network "private_network", ip: "192.168.55.10"
   config.vm.network :forwarded_port, host: 8888, guest: 80, auto_correct: true
 
+  config.vm.provider "virtualbox" do |v|
+    v.memory = 2048
+    v.cpus = 2
+  end
+
   if Vagrant.has_plugin?("vagrant-cachier")
       config.cache.scope = :box
   end
