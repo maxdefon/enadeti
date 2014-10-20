@@ -10,6 +10,8 @@
     },
     "require-dev": {
         "jaz303/phake": "dev-master",
+        "guzzle/guzzle": "3.*",
+        "guzzlehttp/guzzle": "4.*",
         "phpunit/phpunit": "*",
         "phpunit/phpunit-story": "*",
         "behat/behat": "2.4.*@stable",
