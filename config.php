@@ -22,6 +22,8 @@ $config = array(
 );
 
 if(defined('PHP_ENV')) {
+} else if(isset($_SERVER['HTTP_HOST']) && preg_match('/^([a-z]+)\.localhost$/',$_SERVER['HTTP_HOST'],$reg)) {
+    define("PHP_ENV",$reg[1]);
 } else if(getenv("PHP_ENV")) {
     define("PHP_ENV",getenv('PHP_ENV'));
 } else if(file_exists('.env')) {

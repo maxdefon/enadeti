@@ -1,0 +1,13 @@
+default:
+    context:
+        class: 'FeatureContext'
+        parameters:
+            base_url: http://test.localhost
+    extensions:
+        Behat\MinkExtension\Extension:
+            base_url: http://test.localhost
+            default_session: selenium2
+            goutte: ~
+            selenium2:
+                wd_host: "http://localhost:8643/wd/hub"
+
