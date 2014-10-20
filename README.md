@@ -38,7 +38,7 @@ Em seguida, dentro da pasta do projeto, instale o [Composer][http://composer.org
 
 ### Tarefas
 
-    $ ./vendor/bin/phake -T 
+    $ phake -T 
 
 ## Licença
 
