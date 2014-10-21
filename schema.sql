@@ -18,8 +18,10 @@ CREATE TABLE IF NOT EXISTS users (
 );
 
 CREATE TABLE IF NOT EXISTS checklist (
-    `user_id` VARCHAR(100) NOT NULL,
-    `step_id` INT NOT NULL,
-    PRIMARY KEY(`user_id`,`step_id`)
+  `user_id` VARCHAR(100) NOT NULL,
+  `step_id` INT NOT NULL,
+  PRIMARY KEY(`user_id`,`step_id`),
+  FOREIGN KEY(`user_id`) REFERENCES users(`user_id`),
+  FOREIGN KEY(`step_id`) REFERENCES steps(`step_id`)
 );
 
