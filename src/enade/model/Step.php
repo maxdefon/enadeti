@@ -1,6 +1,6 @@
 <?php
 
-namespace \enade\model;
+namespace enade\model;
 
 class Step {
 

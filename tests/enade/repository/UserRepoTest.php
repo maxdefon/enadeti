@@ -24,10 +24,16 @@ class UserRepoTest extends \PHPUnit_Framework_TestCase {
       $this->assertEquals("321",$user->registration,"Should find inserted user");
       $repo->deleteByEmail("foo@bar.com");
       $user = $repo->getByEmail("foo@bar.com");
-      $this->assertEquals("321",$user->registration,"Should not find deleted user");
+      $this->assertNull($user,"Should not find deleted user");
     }
 
     public function testLogin() {
+      $repo = new UserRepo;
+      $repo->create(['email'=>"foo@bar.com","password"=>"123","registration"=>"321"]);
+      $user = $repo->getByLogin("foo@bar.com","111");
+      $this->assertNull($user);
+      $user = $repo->getByLogin("foo@bar.com","123");
+      $this->assertEquals($user->registration,"321");
     }
 
 }

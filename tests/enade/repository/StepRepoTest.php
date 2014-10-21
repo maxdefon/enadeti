@@ -13,7 +13,7 @@ class StepRepoTest extends \PHPUnit_Framework_TestCase {
     public function testList() {
         $repo = new StepRepo;
         $steps = $repo->getAll();
-        $this->assertEquals(count($steps),0);
+        $this->assertEquals(count($steps),3);
     }
 
 }

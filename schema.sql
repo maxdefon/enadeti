@@ -17,3 +17,9 @@ CREATE TABLE IF NOT EXISTS users (
   PRIMARY KEY(`user_id`)
 );
 
+CREATE TABLE IF NOT EXISTS checklist (
+    `user_id` VARCHAR(100) NOT NULL,
+    `step_id` INT NOT NULL,
+    PRIMARY KEY(`user_id`,`step_id`)
+);
+

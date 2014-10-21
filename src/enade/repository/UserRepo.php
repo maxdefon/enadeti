@@ -35,9 +35,10 @@ class UserRepo {
       }
 
       $data["user_id"] = uniqid();
+      $data["password"] = sha1($data["password"]);
 
       $query = $this->db->prepare("INSERT INTO users (user_id,email,name,password,registration,active) VALUES (?,?,?,?,?,?);");
-      $query->execute(array($data["user_id"],$data["email"],$data["name"],md5($data["password"]),$data["registration"],1));
+      $query->execute(array($data["user_id"],$data["email"],$data["name"],$data["password"],$data["registration"],1));
 
       $error = $query->errorInfo();
       if($error[0] != "00000") {
@@ -52,6 +53,19 @@ class UserRepo {
     }
     public function getByRegistration($registration) {
       return $this->getBy("registration",$registration);
+    }
+
+    public function getByLogin($email,$password) {
+        $user = $this->getBy("email",$email);
+        if($user) {
+            if($user->password == sha1($password)) {
+                return $user;
+            } else {
+                return null;
+            }
+        } else {
+            return null;
+        }
     }
 
     public function getBy($key,$value) {
@@ -69,10 +83,9 @@ class UserRepo {
       return $user;
     }
 
-    public function getByLogin($email,$password) {
-    }
-
     public function deleteByEmail($email) {
+        $q = $this->db->prepare("DELETE FROM users WHERE email = ?");
+        return $q->execute(array($email));
     }
 
 }

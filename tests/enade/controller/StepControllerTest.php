@@ -17,7 +17,7 @@ class StepControllerTest extends \PHPUnit_Framework_TestCase {
         $json = $control->get();
         $obj = json_decode($json);
         $this->assertTrue(is_array( $obj ));
-        $this->assertEquals(count($obj),0);
+        $this->assertEquals(count($obj),3);
     }
 
 }
