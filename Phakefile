@@ -45,8 +45,7 @@ group('test',function(){
   });
 
   task('ui',function(){
-      passthru('PHP_ENV=test vendor/bin/phake db:drop db:init db:load');
-      passthru('PHP_ENV=test vendor/bin/behat features');
+      passthru('export PHP_ENV=test && phake db:drop db:init db:load && behat');
   });
 });
 
