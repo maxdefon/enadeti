@@ -1,0 +1,162 @@
+body{
+  background-image: url(../images/wood-floors.jpg);
+  padding: 0px;
+  margin: 0px;
+}
+
+header.header{
+  background-color: #eaeaea;
+  height: 80px;
+  width: 100%;
+  padding: 0px;
+  margin: 0px;
+
+}
+
+header.header h1{
+  padding: 0px;
+  margin: 0px;
+}
+
+.content{
+  width: 1024px;
+  margin: 0 auto;
+}
+/*.logo{
+  display: inline-block;
+}
+nav.menu{
+  display: inline-block;
+}*/
+nav.menu ul{
+  text-decoration: none;
+  float:right;
+  margin-top:20px;
+}
+nav.menu ul li {
+
+  display: inline-block;
+  margin-left: 10px;
+}
+nav.menu ul li a{
+  color: #fff;
+  background: #15aebd;
+  display: inline-block;
+  padding: 5px 10px 5px 10px;
+}
+nav.menu ul li a:hover{
+  text-decoration: none;
+  opacity: 0.6;
+}
+nav.menu ul li a.active{
+  color: #15aebd;
+  background: #fff;
+}
+
+
+
+/*********************************************************************************/
+/* Banner                                                                        */
+/*********************************************************************************/
+
+  #banner
+  {
+    position: relative;
+    color: #fff;
+    text-shadow: 0 0 0.5px rgba(255,255,255,0.25);
+    text-align: center;
+    background: #15aebd url('images/banner.svg') bottom center no-repeat;
+    padding: 5em 0 5em 0;
+    margin: 0;
+    background-size: 125% auto;
+    font-size: 1.5em;
+  }
+
+    #banner .button
+    {
+      color: #fff;
+      text-shadow: 0 0 0.5px rgba(53,184,130,0.25);
+    }
+
+    #banner header
+    {
+      margin: 0 0 2em 0;
+    }
+
+      #banner header h2
+      {
+        font-weight: 400;
+        font-size: 1.75em;
+        letter-spacing: 4px;
+      }
+
+    #banner p
+    {
+      margin: 0;
+
+    }
+
+    #banner footer
+    {
+      margin: 2em 0 0 0;
+    }
+
+    #banner a
+    {
+      color: inherit;
+      border-bottom-color: rgba(255,255,255,0.5);
+    }
+
+      #banner a:hover
+      {
+        border-bottom-color: rgba(255,255,255,0);
+      }
+
+
+.what-is{
+  padding: 100px 20px 100px 20px;
+  text-align: center;
+  font-size: 1.0em;
+  color: #696969;
+  /*background-image:url(images/arrow-two.png);*/
+  text-shadow: 0 0 0.5px rgba(255,255,255,0.25);
+
+  font-size: 1.5em;
+}
+
+.who{
+  padding: 100px 20px 100px 20px;
+  text-align: center;
+  font-size: 1.0em;
+  color: #696969;
+  background-color: #eaeaea !important;
+}
+
+.button-banner
+{
+  -webkit-appearance: none;
+  position: relative;
+  display: inline-block;
+  border: 0;
+  background: #eaeaea;
+  color: #15aebd!important;
+  text-shadow: 0 0 0.5px rgba(255,255,255,0.25);
+  cursor: pointer;
+  text-decoration: none;
+  outline: 0;
+  padding: 1em 3em 1em 3em;
+  text-align: center;
+  border-radius: 3em;
+  font-weight: 400;
+  -moz-transition: background-color 0.35s ease-in-out, color 0.35s ease-in-out;
+  -webkit-transition: background-color 0.35s ease-in-out, color 0.35s ease-in-out;
+  -o-transition: background-color 0.35s ease-in-out, color 0.35s ease-in-out;
+  -ms-transition: background-color 0.35s ease-in-out, color 0.35s ease-in-out;
+  transition: background-color 0.35s ease-in-out, color 0.35s ease-in-out;
+}
+
+.button-banner:hover
+{
+  opacity: 0.7;
+  text-decoration: none;
+}

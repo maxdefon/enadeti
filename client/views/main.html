@@ -1,0 +1,13 @@
+Buscar: <input ng-model="query">
+
+<select ng-model="orderProp">
+  <option value="firstName">Ordem Alfabética</option>
+  <option value="id">id</option>
+</select>
+
+<ul class="users">
+    <li ng-repeat="user in users | filter:query | orderBy:orderProp">
+        <a href="#/users/{{user.id}}">{{user.firstName}} {{user.lastName}} </a>  
+    </li>
+</ul>
+

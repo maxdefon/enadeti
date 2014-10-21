@@ -4,3 +4,5 @@
 *~
 composer.phar
 vendor
+npm-debug.log
+client/node_modules
