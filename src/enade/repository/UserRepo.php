@@ -45,7 +45,12 @@ class UserRepo {
         throw new \Exception(json_encode($error));
       }  
 
-      return $data;
+      $user = new User;
+      foreach($data as $k=>$v) {
+        $user->$k = $data[$k];
+      }
+
+      return $user;
     }
 
     public function getByEmail($email) {

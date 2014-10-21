@@ -10,6 +10,7 @@ use \enade\repository\UserRepo;
 class UserControllerTest extends \PHPUnit_Framework_TestCase {
 
     public function setup() {
+        if ( !isset( $_SESSION ) ) $_SESSION = array(  );
         include 'config.php';
     }
 
