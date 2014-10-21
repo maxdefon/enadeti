@@ -16,7 +16,9 @@ class UserRepoTest extends \PHPUnit_Framework_TestCase {
       $this->assertFalse($repo->create(['name'=>'Foo']),"Should not create without email");
       $this->assertFalse($repo->create(['email'=>"foo@bar.com"]),"Should not create without password");
       $this->assertFalse($repo->create(['email'=>'foo@bar.com','password'=>"123"]),"Should not create without registration");
-      $this->assertTrue($repo->create(['email'=>"foo@bar.com","password"=>"123","registration"=>"321"]),"Should create with all data");
+
+      $this->assertTrue(is_object($repo->create(['email'=>"foo@bar.com","password"=>"123","registration"=>"321"])),"Should create with all data");
+
       $this->assertFalse($repo->create(['email'=>"foo@bar.com","password"=>"123","registration"=>"321"]),"Should not create repeated email");
       $this->assertFalse($repo->create(['email'=>"fuz@bar.com","password"=>"123","registration"=>"321"]),"Should not create repeated registration");
 
@@ -34,6 +36,8 @@ class UserRepoTest extends \PHPUnit_Framework_TestCase {
       $this->assertNull($user);
       $user = $repo->getByLogin("foo@bar.com","123");
       $this->assertEquals($user->registration,"321");
+
+      $repo->deleteByEmail("foo@bar.com");
     }
 
 }

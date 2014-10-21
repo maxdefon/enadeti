@@ -45,7 +45,7 @@ class UserRepo {
         throw new \Exception(json_encode($error));
       }  
 
-      return true;
+      return $data;
     }
 
     public function getByEmail($email) {
