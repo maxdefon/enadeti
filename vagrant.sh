@@ -9,6 +9,7 @@ if [[ ! -e ~/.apache_done ]]; then
     # install apache and php
     apt-get install apache2 libapache2-mod-php5 php5-pgsql php5 php5-cli php5-curl php5-common php5-gd php5-xdebug php5-sqlite php5-pgsql php5-mysql git -y
     a2enmod rewrite
+    a2enmod headers
     service apache2 stop
     # use the project folder as main folder
     rm /var/www -Rf
