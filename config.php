@@ -26,10 +26,8 @@ if(defined('PHP_ENV')) {
     define("PHP_ENV",$reg[1]);
 } else if(getenv("PHP_ENV")) {
     define("PHP_ENV",getenv('PHP_ENV'));
-} else if(file_exists('.env')) {
-    $env = trim( file_get_contents('.env') );
-} else if(file_exists('env_config.php')) {
-    include 'env_config.php';
+} else if(file_exists(__DIR__.'/.env')) {
+    $env = trim( file_get_contents(__DIR__.'/.env') );
 } else {
     define("PHP_ENV","dev");
 }
