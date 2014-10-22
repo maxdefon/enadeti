@@ -16,6 +16,8 @@ class FeatureContext extends MinkContext {
 
   public function __construct(array $params) {
     $this->client = new \Guzzle\Service\Client($params['base_url']);
+    $this->client2 = new \GuzzleHttp\Client();
+    $this->base_url = $params['base_url'];
   }
 
   /** @BeforeFeature */
@@ -45,10 +47,18 @@ class FeatureContext extends MinkContext {
   }
 
   /** 
-   * @Given /^I call "([^"]*)"$/
+   * @Given /^I get "([^"]*)"$/
    */
-  public function iCall($api) {
+  public function iGet($api) {
     $this->response = $this->client->get($api)->send();
+  }
+
+  /** 
+   * @Given /^I post to "([^"]*)" "([^"]*)"$/
+   */
+  public function iPostTo($api,$query) {
+    parse_str($query,$body);
+    $this->response = $this->client2->post($this->base_url.$api,['body'=>$body]);
   }
 
   /**
@@ -65,6 +75,17 @@ class FeatureContext extends MinkContext {
    */
   public function responseIs($r) {
     if($r != $this->response->getBody()) {
+      throw new \Exception("Response did not match: \n Expected: ".$r."\n Got: ".$this->response->getBody());
+    }
+  }
+
+  /**
+   * @Then /^the response field "([^"]*)" is "([^"]*)"$/
+   */
+  public function responseFieldIs($field,$value) {
+    $body = $this->response->getBody();
+    $obj = json_decode($body);
+    if($obj->$field != $value) {
       throw new \Exception("Response did not match: \n Expected: ".$r."\n Got: ".$this->response->getBody());
     }
   }
