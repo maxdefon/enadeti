@@ -4,10 +4,10 @@
     <nav class="menu col-xs-6 col-md-8">
       <ul>
         <li><a href="" class="active" title="" alt="">Home</a></li>
-        <li><a href="" class="" title="" alt="">O que é?</a></li>
-        <li><a href="" class="" title="" alt="">Quem Participará?</a></li>
-        <li><a href="" class="" title="" alt="">Dicas</a></li>
-        <li><a href="" class="" title="" alt="">Desenvolvido por:</a></li>
+        <li><a href="" onclick="$('#what-is').animatescroll();" class="" title="" alt="">O que é?</a></li>
+        <li><a href="" onclick="$('#who').animatescroll();" class="" title="" alt="">Quem Participará?</a></li>
+        <li><a href="" class="" data-toggle="modal" data-target="#myModal" >Dicas</a></li>
+        <li><a href="" onclick="$('#equipe').animatescroll();" class="" title="" alt="">Desenvolvido por:</a></li>
       </ul>
     </nav>
   </div>
@@ -20,12 +20,12 @@
 	</header>
 	<p>    O Momento de valorizar ainda mais o seu diploma.</p>
 	<footer>
-		<a href="#first" class="button-banner" data-toggle="modal" data-target="#myModal">Faça login para ver as dicas</a>
+		<a href="#first" class="button-banner" data-toggle="modal" data-target="#myModal">Faça login para ficar por dentro das dicas</a>
 	</footer>
   </div>
 </section>
 
-<section class="what-is">
+<section id="what-is" class="what-is">
   <div class="container">
   <header>
     <h2>O QUE É?</h2>
@@ -37,7 +37,7 @@
   </div>
 </section>
 
-<section class="who">
+<section id="who" class="who">
   <div class="container">
   <header>
     <h2> QUEM PARTICIPARÁ</h2>
@@ -54,6 +54,69 @@
   </div>
 </section>
 
+<section id="equipe" class="equipe">
+  <div class="container">
+  <header>
+    <h2> Desenvolvido por:</h2></br>
+  </header>
+  <div class="box-team col-md-4" >
+      <div class="pic">
+        <div class="social">
+           <ul>
+            <li><a href="">F </a></li>
+            <li><a href="">G </a></li>
+            <li><a href="">T </a></li>
+           </ul>
+        </div>
+        <img src="images/max.jpg" />
+      </div>
+      <div class="description">
+        <strong>Max Lima</strong><br/>
+         <span>Desenvolvedor Web</span><br/>
+         <p>Análise e Desenvolvimento de Sistemas; Automação Industrial; Gestão da Produção</p>
+      </div>
+  </div>
+  <div class="box-team col-md-4" >
+      <div class="pic">
+        <div class="social">
+           <ul>
+            <li><a href="">F </a></li>
+            <li><a href="">G </a></li>
+            <li><a href="">T </a></li>
+           </ul>
+        </div>
+        <img src="images/max.jpg" />
+      </div>
+      <div class="description">
+        <strong>Max Lima</strong><br/>
+         <span>Desenvolvedor Web</span><br/>
+         <p>Análise e Desenvolvimento de Sistemas; Automação Industrial; Gestão da Produção</p>
+      </div>
+  </div>
+  <div class="box-team col-md-4" >
+      <div class="pic">
+        <div class="social">
+           <ul>
+            <li><a href="">F </a></li>
+            <li><a href="">G </a></li>
+            <li><a href="">T </a></li>
+           </ul>
+        </div>
+        <img src="images/max.jpg" />
+      </div>
+      <div class="description">
+        <strong>Max Lima</strong><br/>
+         <span>Desenvolvedor Web</span><br/>
+         <p>Análise e Desenvolvimento de Sistemas; Automação Industrial; Gestão da Produção</p>
+      </div>
+  </div>
+  </div>
+</section>
+<footer class="footer">
+  <div class="container">
+      Informações do site: <a href="http://www.enade.estacio.br/">enade.estacio.br</a>
+  </div>
+</footer>
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -63,6 +126,14 @@
         <h4 class="modal-title" id="myModalLabel">Login</h4>
       </div>
       <div class="modal-body">
+          <div  class= "input-group col-md-12" >
+            <input  type= "text"  class="form-control "  placeholder="Username" >
+
+          </div>
+          <br/>
+          <div  class= "input-group col-md-12" >
+            <input  type="password"  class="form-control "  placeholder="senha" >
+          </div>
 
       </div>
       <div class="modal-footer">

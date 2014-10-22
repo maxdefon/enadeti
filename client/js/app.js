@@ -12,6 +12,10 @@ app.config(function ($routeProvider, $httpProvider) {
         controller: 'MainCtrl',
         templateUrl: 'views/home.html'
     })
+    .when('/user', {
+        controller: 'UserCtrl',
+        templateUrl: 'views/steps.html'
+    })
     .otherwise({redirectTo: '/'});
 });
 

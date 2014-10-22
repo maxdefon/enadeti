@@ -160,3 +160,69 @@ nav.menu ul li a.active{
   opacity: 0.7;
   text-decoration: none;
 }
+
+#equipe.equipe{
+  text-align: center;
+}
+.box-team{
+  padding:0 50px 0 50px;
+  margin-bottom: 50px;
+
+
+}
+.box-team .pic:hover{
+   opacity: 0.5;
+}
+.box-team .social{
+   display: none;
+   position: absolute;
+}
+.box-team .social ul{
+   text-decoration: none;
+}
+.box-team .social ul li{
+   display: inline-block;
+
+}
+.box-team .pic:hover .social{
+   display: inline-block;
+}
+.box-team .pic img{
+  width: 230px;
+
+}
+.box-team .description{
+  width: 230px;
+  min-height: 200px;
+  background: #15aebd ;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  margin: 0 auto;
+}
+.box-team .description strong{
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+.box-team .description span{
+  font-style: italic;
+  margin-bottom: 5px;
+display: inline-block;
+}
+
+footer.footer{
+  width: 100%;
+  min-height: 80px;
+  background: #303441;
+  text-align: center;
+  color: #fff;
+  padding-top: 30px;
+}
+footer.footer a{
+
+  color: #fff;
+}
+footer.footer a:hover{
+  text-decoration: none;
+  opacity: 0.7;
+}
