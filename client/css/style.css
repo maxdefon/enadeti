@@ -157,7 +157,7 @@ nav.menu ul li a.active{
 
 .button-banner:hover
 {
-  opacity: 0.7;
+  opacity: 0.8;
   text-decoration: none;
 }
 
@@ -200,6 +200,7 @@ nav.menu ul li a.active{
   text-align: center;
   padding: 10px;
   margin: 0 auto;
+  height: 264px;
 }
 .box-team .description strong{
   font-size: 20px;
@@ -244,4 +245,16 @@ footer.footer a:hover{
 .check-step{
   background-color:#1BBC9B!important;
   color:#fff!important;
+}
+
+.box-team .social ul{
+    text-decoration: none;
+    margin-top: 140px;
+}
+.box-team .social ul li{
+    display: inline-block;
+}
+.box-team .social ul li a img{
+    width: 45px;
+    margin-right: 5px;
 }
