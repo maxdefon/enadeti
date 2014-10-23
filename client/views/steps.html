@@ -7,10 +7,10 @@
 					<p>COMO SABER SE VOCÊ ESTÁ PREPARADO PARA O ENADE.</p>
 				</header>
 				<footer>
-					<a href="" onclick="$('#step-0').animatescroll();" class="button style2 scrolly scrolly-centered">Proceed as anticipated</a>
+					<a href="" onclick="$('#step-0').animatescroll();" class="button style2 scrolly scrolly-centered">Iniciar</a>
 				</footer>
 			</section>
-
+		<div class="box-steps">
     <article ng-repeat="step in steps" id="step-{{step.step_order}}" class="box-step-{{step.step_id}} container box-next box style2">
       <header class="step-{{step.step_id}}">
         <h2>{{step.title}}</h2>
@@ -27,7 +27,7 @@
         <p>{{last_step.description}}</p>
       </header>
     </article>
-
+	  </div>
       <!-- <article  id="step-2" class="container box  box-next style2">
         <header>
           <h2>Magnis parturient</h2>

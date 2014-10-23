@@ -14,7 +14,7 @@
 
 	body
 	{
-		background-color:		#183026;
+		background-color:		#15aebd!important;
 		background-image:		url('images/overlay.png'),			url('../images/bg.jpg');
 		background-repeat:		repeat,								no-repeat;
 		background-size:		auto,								cover;
@@ -556,7 +556,7 @@
 		.box
 		{
 			position: relative;
-			margin-top: 9em;
+			margin-top: 20em;
 			margin-bottom: 0;
 		}
 
@@ -565,9 +565,9 @@
 				content: '';
 				display: block;
 				position: absolute;
-				top: -9em;
+				top: -20em;
 				left: 50%;
-				height: 9em;
+				height: 20em;
 				border-left: solid 1px #fff;
         background: url('images/arrow.svg') no-repeat;
 			}
@@ -625,10 +625,10 @@
 				{
 				}
 
-					.box.style1 .inner > :last-child
-					{
-						margin: 0;
-					}
+				.box-steps:first-child .box-next:before
+				{
+					background: red;
+				}
 
 				.box.style1.right
 				{

@@ -6,6 +6,8 @@ app.controller('UserCtrl', [
 
     function($scope, $rootScope, $location, ApiConnectService) {
 
+          $('#step-0').removeClass('box-next');
+
          if(localStorage.user_logged == '1'){
             $scope.user_logged = true;
           }
