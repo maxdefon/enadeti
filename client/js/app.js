@@ -5,7 +5,7 @@ var app = angular.module('App', [
 
 app.config(function ($routeProvider, $httpProvider) {
 
-    // $httpProvider.defaults.withCredentials = true;
+    $httpProvider.defaults.withCredentials = false;
 
     $routeProvider
     .when('/', {
@@ -16,6 +16,10 @@ app.config(function ($routeProvider, $httpProvider) {
         controller: 'UserCtrl',
         templateUrl: 'views/steps.html'
     })
+    .when('/step-1', {
+        controller: 'UserCtrl',
+        templateUrl: 'views/steps.html'
+    })
     .otherwise({redirectTo: '/'});
 });
 
@@ -23,6 +27,7 @@ app.run([
   '$rootScope',
   function ($rootScope) {
     $rootScope.api_url = "http://localhost:8888/api";
-    
+    $rootScope.client_url = "http://localhost:8888/client/";
+
 
 }]);
