@@ -11,18 +11,18 @@
 				</footer>
 			</section>
 
-    <article ng-repeat="step in steps" id="step-{{step.step_order}}" class="container box-next box style2">
-      <header>
+    <article ng-repeat="step in steps" id="step-{{step.step_order}}" class="box-step-{{step.step_id}} container box-next box style2">
+      <header class="step-{{step.step_id}}">
         <h2>{{step.title}}</h2>
         <p>{{step.description}}</p>
       </header>
-      <footer>
-        <a id="{{step.step_id}}" href="" ng-click="scroll(step.step_id)" class="button style2 scrolly scrolly-centered">PRÓXIMO</a>
+      <footer >
+        <a  href="" ng-click="scroll(step.step_id)" class="step-{{step.step_id}} button style2 scrolly scrolly-centered">PRÓXIMO</a>
       </footer>
     </article>
 
     <article  id="step-{{last_step.step_order}}" class="container box box-next style2">
-      <header>
+      <header class="step-{{step.step_id}}">
         <h2>{{last_step.title}}</h2>
         <p>{{last_step.description}}</p>
       </header>
