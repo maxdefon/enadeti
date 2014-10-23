@@ -27,6 +27,9 @@ $r->get('/api/user','\enade\controller\UserController');
 $r->post('/api/user','\enade\controller\UserController');
 $r->get('/api/checklist','\enade\controller\ChecklistController');
 $r->post('/api/checklist','\enade\controller\ChecklistController');
+$r->get('/api/logout',function(){
+  unset( $_SESSION['user_id'] );
+});
 
 $r->get('/',function(){
     header('Location: index.html');
