@@ -26,8 +26,6 @@ app.config(function ($routeProvider, $httpProvider) {
 app.run([
   '$rootScope',
   function ($rootScope) {
-    $rootScope.api_url = "http://enade.maxlima.net/api";
-    $rootScope.client_url = "http://enade.maxlima.net/client/";
-
-
+    $rootScope.api_url = "/api";
+    $rootScope.client_url = "/client";
 }]);

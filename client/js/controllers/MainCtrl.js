@@ -17,13 +17,11 @@ app.controller('MainCtrl', [
       }
 
       $scope.logout = function(){
-        $rootScope.user = "";
-        localStorage.setItem("user", "");
+        $.get('/api/logout');
         localStorage.setItem("user_logged", "0");
-        window.location.reload();
-        $location.path('/');
-
+        $scope.user_logged=false;
         alert("Volte sempre!");
+        $location.path('/');
       }
 
       $scope.login = function(){
@@ -31,14 +29,13 @@ app.controller('MainCtrl', [
           $scope.login_empty = false;
 
           function handleSuccess(response) {
-              if(response === "null"){
+              if(response === "null" || response === 'false'){
                  $scope.error_login = true;
-              }else{
-
-                 $rootScope.user = response;
-                 localStorage.setItem("user", response.user_id);
+              } else{
+                 $("#myModal").modal('hide');
+                 $scope.user_logged = true;
+                 localStorage.setItem("user_id", response.user_id);
                  localStorage.setItem("user_logged", "1");
-                 window.location.reload();
                  $location.path('/user');
               }
           }
@@ -63,15 +60,16 @@ app.controller('MainCtrl', [
 
         function handleSuccess(response) {
 
-            if(response === "null"){
-               $scope.error_login = true;
+            if(response === "null" || response === 'false'){
+               $scope.error_register = true;
             }else{
-               $rootScope.user = response;
-               localStorage.setItem("user", response.user_id);
+               $scope.user_logged = true;
+               localStorage.setItem("user_id", response.user_id);
                localStorage.setItem("user_logged", "1");
                alert("cadastrado com sucesso!");
-               window.location.reload();
-               $location.path('user');
+               $("#myModal").modal('hide');
+               $("#register").modal('hide');
+               $location.path('/user');
 
             }
         }
