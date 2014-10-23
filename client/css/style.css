@@ -163,6 +163,7 @@ nav.menu ul li a.active{
 
 #equipe.equipe{
   text-align: center;
+  padding: 60px 20px 60px 20px;
 }
 .box-team{
   padding:0 50px 0 50px;
@@ -225,4 +226,8 @@ footer.footer a{
 footer.footer a:hover{
   text-decoration: none;
   opacity: 0.7;
+}
+
+.error-form{
+  color: #a94442;
 }

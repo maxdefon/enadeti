@@ -8,6 +8,7 @@
         <li><a href="" onclick="$('#who').animatescroll();" class="" title="" alt="">Quem Participará?</a></li>
         <li><a href="" class="" data-toggle="modal" data-target="#myModal" >Dicas</a></li>
         <li><a href="" onclick="$('#equipe').animatescroll();" class="" title="" alt="">Desenvolvido por:</a></li>
+        <li><a href="" class="" ng-click="logout()" ng-if="user_logged" >Logout</a></li>
       </ul>
     </nav>
   </div>
@@ -125,21 +126,26 @@
         <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
         <h4 class="modal-title" id="myModalLabel">Login</h4>
       </div>
-      <div class="modal-body">
-          <div  class= "input-group col-md-12" >
-            <input  type= "text"  class="form-control "  placeholder="Username" >
+      <form ng-submit="login()">
+        <div class="modal-body">
+            <div  class= "input-group col-md-12" >
+              <input  type="text" ng-model="email" name="email" class="form-control"  placeholder="email" >
 
-          </div>
-          <br/>
-          <div  class= "input-group col-md-12" >
-            <input  type="password"  class="form-control "  placeholder="senha" >
-          </div>
+            </div>
+            <br/>
+            <div  class= "input-group col-md-12" >
+              <input  type="password"  ng-model="password" name="password" class="form-control"  placeholder="senha" >
+            </div>
+            <br/>
+            <p class="error-form" ng-if="error_login"> Email ou senha invalidos!</p>
+            <p class="error-form" ng-if="login_empty"> formulario não pode ser vazio!</p>
 
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">cadastre-se</button>
-        <button type="button" class="btn btn-primary">enviar</button>
-      </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Cadastre-se</button>
+          <input type="submit" class="btn btn-primary" value="Enviar" />
+        </div>
+      </form>
     </div>
   </div>
 </div>

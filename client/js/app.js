@@ -1,11 +1,11 @@
 var app = angular.module('App', [
     'ngRoute',
+    'ApiConnect',
 ]);
 
 app.config(function ($routeProvider, $httpProvider) {
 
-
-    $httpProvider.defaults.withCredentials = true;
+    // $httpProvider.defaults.withCredentials = true;
 
     $routeProvider
     .when('/', {
@@ -19,6 +19,10 @@ app.config(function ($routeProvider, $httpProvider) {
     .otherwise({redirectTo: '/'});
 });
 
-app.run(function () {
+app.run([
+  '$rootScope',
+  function ($rootScope) {
+    $rootScope.api_url = "http://localhost:8888/api";
+    
 
-});
+}]);
