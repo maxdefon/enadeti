@@ -4,8 +4,6 @@
     Deny from all
 </FilesMatch>
 
-Header set Access-Control-Allow-Origin "*"
-
 RewriteEngine On
 RewriteCond %{DOCUMENT_ROOT}/client/$1 -f
 RewriteRule ^(.*)$ client/$1
