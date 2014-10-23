@@ -4,15 +4,19 @@ group('db',function(){
     task('truncate',function(){
         include 'config.php';
         $db = new PDO('mysql:host='.DB_HOST.';dbname='.DB_NAME,DB_USER,DB_PASS);
-        $db->exec("TRUNCATE steps;");
+        $db->exec("DELETE FROM checklist;");
         var_dump($db->errorInfo());
-        $db->exec("TRUNCATE users;");
+        $db->exec("DELETE FROM steps;");
+        var_dump($db->errorInfo());
+        $db->exec("DELETE FROM users;");
         var_dump($db->errorInfo());
     });
 
     task('drop',function(){
         include 'config.php';
         $db = new PDO('mysql:host='.DB_HOST.';dbname='.DB_NAME,DB_USER,DB_PASS);
+        $db->exec("DROP TABLE checklist;");
+        var_dump($db->errorInfo());
         $db->exec("DROP TABLE steps;");
         var_dump($db->errorInfo());
         $db->exec("DROP TABLE users;");
